@@ -8,6 +8,16 @@ module.exports = {
     filename: "main.js",
     path: path.resolve(__dirname, "dist"),
   },
+  module: {
+    rules: [
+      {
+        test: /\.json$/,
+        type: 'javascript/auto',
+        use: 'json-loader'
+      },
+      // other rules can be added here
+    ]
+  },
   plugins: [
     new CopyWebpackPlugin({
       patterns: [
